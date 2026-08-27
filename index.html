@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Angela ♡</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: "DM Sans", sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, #ffeef5 0, transparent 30%),
+        radial-gradient(circle at 80% 80%, #eeeaff 0, transparent 30%),
+        #fffafc;
+      color: #39343a;
+    }
+
+    /* Floating hearts */
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 18px;
+      opacity: 0.25;
+      animation: floatUp linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    /* Main card */
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: min(520px, 92vw);
+      min-height: 500px;
+      padding: 55px 35px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 32px;
+      box-shadow: 0 20px 70px rgba(180, 150, 170, 0.15);
+      text-align: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page {
+      width: 100%;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .small-heart {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 9vw, 64px);
+      font-weight: 400;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #777078;
+      max-width: 370px;
+      margin: 0 auto 35px;
+    }
+
+    .button {
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .continue {
+      background: #39343a;
+      color: white;
+      box-shadow: 0 10px 25px rgba(57, 52, 58, 0.15);
+    }
+
+    .continue:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(57, 52, 58, 0.2);
+    }
+
+    .message {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      line-height: 1.6;
+      max-width: 410px;
+      margin: 0 auto 30px;
+    }
+
+    .proposal {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 7vw, 45px);
+      font-weight: 400;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .yes {
+      background: #39343a;
+      color: white;
+      min-width: 100px;
+    }
+
+    .yes:hover {
+      transform: scale(1.06);
+    }
+
+    .no {
+      background: #f4edf1;
+      color: #5d555b;
+      min-width: 100px;
+      position: relative;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .final-heart {
+      font-size: 65px;
+      animation: heartbeat 1.2s infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    .final-title {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .final-text {
+      color: #777078;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 500px) {
+      .card {
+        min-height: 460px;
+        padding: 45px 25px;
+        border-radius: 27px;
+      }
+
+      .message {
+        font-size: 23px;
+      }
+
+      .proposal {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating background hearts -->
+  <div class="heart" style="left:8%; animation-duration:12s;">♡</div>
+  <div class="heart" style="left:20%; animation-duration:16s; animation-delay:2s;">♡</div>
+  <div class="heart" style="left:35%; animation-duration:13s; animation-delay:5s;">♡</div>
+  <div class="heart" style="left:52%; animation-duration:17s; animation-delay:1s;">♡</div>
+  <div class="heart" style="left:68%; animation-duration:14s; animation-delay:4s;">♡</div>
+  <div class="heart" style="left:83%; animation-duration:18s; animation-delay:3s;">♡</div>
+  <div class="heart" style="left:94%; animation-duration:12s; animation-delay:6s;">♡</div>
+
+  <main class="container">
+    <div class="card">
+
+      <!-- PAGE 1 -->
+      <section class="page" id="page1">
+        <div class="small-heart">♡</div>
+
+        <h1>Angela</h1>
+
+        <p class="subtitle">
+          I made something small for you.<br>
+          Take a moment and open it...
+        </p>
+
+        <button class="button continue" onclick="nextPage(1)">
+          Open ♡
+        </button>
+      </section>
+
+
+      <!-- PAGE 2 -->
+      <section class="page hidden" id="page2">
+        <div class="small-heart">✦</div>
+
+        <p class="message">
+          Sometimes, one person comes into your life
+          and somehow makes ordinary moments feel
+          a little more special.
+        </p>
+
+        <button class="button continue" onclick="nextPage(2)">
+          There's more...
+        </button>
+      </section>
+
+
+      <!-- PAGE 3 -->
+      <section class="page hidden" id="page3">
+        <div class="small-heart">♡</div>
+
+        <p class="message">
+          And somehow, Angela,
+          you became that person.
+        </p>
+
+        <button class="button continue" onclick="nextPage(3)">
+          One last thing
+        </button>
+      </section>
+
+
+      <!-- PAGE 4 -->
+      <section class="page hidden" id="page4">
+
+        <div class="proposal">
+          Angela,<br>
+          will you be mine? ♡
+        </div>
+
+        <div class="buttons">
+          <button class="button yes" onclick="sayYes()">
+            Yes ♡
+          </button>
+
+          <button class="button no" id="noButton">
+            No
+          </button>
+        </div>
+
+      </section>
+
+
+      <!-- FINAL PAGE -->
+      <section class="page hidden" id="finalPage">
+
+        <div class="final-heart">♡</div>
+
+        <div class="final-title">
+          YAY!
+        </div>
+
+        <p class="final-text">
+          You just made this little website<br>
+          very, very happy. ♡
+        </p>
+
+      </section>
+
+    </div>
+  </main>
+
+
+  <script>
+
+    function nextPage(current) {
+      document.getElementById("page" + current).classList.add("hidden");
+      document.getElementById("page" + (current + 1)).classList.remove("hidden");
+    }
+
+
+    function sayYes() {
+
+      document.getElementById("page4").classList.add("hidden");
+      document.getElementById("finalPage").classList.remove("hidden");
+
+      // Celebration hearts
+      for (let i = 0; i < 25; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "♥";
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.top = Math.random() * 100 + "%";
+        heart.style.fontSize = (12 + Math.random() * 25) + "px";
+        heart.style.opacity = "0.7";
+        heart.style.pointerEvents = "none";
+        heart.style.animation = "floatUp 4s ease forwards";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 4000);
+      }
+    }
+
+
+    // Playful No button
+    const noButton = document.getElementById("noButton");
+
+    noButton.addEventListener("mouseover", moveNoButton);
+    noButton.addEventListener("touchstart", moveNoButton);
+
+    function moveNoButton() {
+
+      const card = document.querySelector(".card");
+      const cardRect = card.getBoundingClientRect();
+
+      const maxX = cardRect.width / 2 - 120;
+      const maxY = 100;
+
+      const x = (Math.random() * maxX * 2) - maxX;
+      const y = (Math.random() * maxY * 2) - maxY;
+
+      noButton.style.transform =
+        `translate(${x}px, ${y}px)`;
+    }
+
+  </script>
+
+</body>
+</html>
